@@ -39,7 +39,7 @@ class CourseControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.courses.index')
+            ->assertViewIs('courses.index')
             ->assertViewHas('courses');
     }
 
@@ -50,7 +50,7 @@ class CourseControllerTest extends TestCase
     {
         $response = $this->get(route('courses.create'));
 
-        $response->assertOk()->assertViewIs('app.courses.create');
+        $response->assertOk()->assertViewIs('courses.create');
     }
 
     /**
@@ -82,7 +82,7 @@ class CourseControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.courses.show')
+            ->assertViewIs('courses.show')
             ->assertViewHas('course');
     }
 
@@ -97,7 +97,7 @@ class CourseControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.courses.edit')
+            ->assertViewIs('courses.edit')
             ->assertViewHas('course');
     }
 

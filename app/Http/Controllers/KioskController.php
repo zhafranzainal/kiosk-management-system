@@ -25,7 +25,7 @@ class KioskController extends Controller
             ->paginate(5)
             ->withQueryString();
 
-        return view('app.kiosks.index', compact('kiosks', 'search'));
+        return view('kiosks.index', compact('kiosks', 'search'));
     }
 
     /**
@@ -38,7 +38,7 @@ class KioskController extends Controller
 
         $businessTypes = BusinessType::pluck('name', 'id');
 
-        return view('app.kiosks.create', compact('businessTypes'));
+        return view('kiosks.create', compact('businessTypes'));
     }
 
     /**
@@ -67,7 +67,7 @@ class KioskController extends Controller
     {
         $this->authorize('view', $kiosk);
 
-        return view('app.kiosks.show', compact('kiosk'));
+        return view('kiosks.show', compact('kiosk'));
     }
 
     /**
@@ -81,7 +81,7 @@ class KioskController extends Controller
 
         $businessTypes = BusinessType::pluck('name', 'id');
 
-        return view('app.kiosks.edit', compact('kiosk', 'businessTypes'));
+        return view('kiosks.edit', compact('kiosk', 'businessTypes'));
     }
 
     /**

@@ -26,7 +26,7 @@ class UserController extends Controller
             ->paginate(5)
             ->withQueryString();
 
-        return view('app.users.index', compact('users', 'search'));
+        return view('users.index', compact('users', 'search'));
     }
 
     /**
@@ -39,7 +39,7 @@ class UserController extends Controller
 
         $roles = Role::get();
 
-        return view('app.users.create', compact('roles'));
+        return view('users.create', compact('roles'));
     }
 
     /**
@@ -72,7 +72,7 @@ class UserController extends Controller
     {
         $this->authorize('view', $user);
 
-        return view('app.users.show', compact('user'));
+        return view('users.show', compact('user'));
     }
 
     /**
@@ -86,7 +86,7 @@ class UserController extends Controller
 
         $roles = Role::get();
 
-        return view('app.users.edit', compact('user', 'roles'));
+        return view('users.edit', compact('user', 'roles'));
     }
 
     /**

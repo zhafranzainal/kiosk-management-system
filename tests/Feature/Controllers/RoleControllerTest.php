@@ -18,7 +18,7 @@ class RoleControllerTest extends TestCase
         parent::setUp();
 
         $this->actingAs(User::factory()->create(['email' => 'admin@admin.com']));
-        
+
         $this->seed(\Database\Seeders\PermissionsSeeder::class);
 
         $this->withoutExceptionHandling();
@@ -33,7 +33,7 @@ class RoleControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.roles.index')
+            ->assertViewIs('roles.index')
             ->assertViewHas('roles');
     }
 
@@ -44,7 +44,7 @@ class RoleControllerTest extends TestCase
     {
         $response = $this->get(route('roles.create'));
 
-        $response->assertOk()->assertViewIs('app.roles.create');
+        $response->assertOk()->assertViewIs('roles.create');
     }
 
     /**
@@ -75,7 +75,7 @@ class RoleControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.roles.show')
+            ->assertViewIs('roles.show')
             ->assertViewHas('role');
     }
 
@@ -90,7 +90,7 @@ class RoleControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.roles.edit')
+            ->assertViewIs('roles.edit')
             ->assertViewHas('role');
     }
 
@@ -126,7 +126,7 @@ class RoleControllerTest extends TestCase
         $response = $this->delete(route('roles.destroy', $role));
 
         $response->assertRedirect(route('roles.index'));
-        
+
         $this->assertModelMissing($role);
     }
 }

@@ -39,7 +39,7 @@ class BusinessTypeControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.business_types.index')
+            ->assertViewIs('business_types.index')
             ->assertViewHas('businessTypes');
     }
 
@@ -50,7 +50,7 @@ class BusinessTypeControllerTest extends TestCase
     {
         $response = $this->get(route('business-types.create'));
 
-        $response->assertOk()->assertViewIs('app.business_types.create');
+        $response->assertOk()->assertViewIs('business_types.create');
     }
 
     /**
@@ -82,7 +82,7 @@ class BusinessTypeControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.business_types.show')
+            ->assertViewIs('business_types.show')
             ->assertViewHas('businessType');
     }
 
@@ -97,7 +97,7 @@ class BusinessTypeControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.business_types.edit')
+            ->assertViewIs('business_types.edit')
             ->assertViewHas('businessType');
     }
 

@@ -39,7 +39,7 @@ class BankControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.banks.index')
+            ->assertViewIs('banks.index')
             ->assertViewHas('banks');
     }
 
@@ -50,7 +50,7 @@ class BankControllerTest extends TestCase
     {
         $response = $this->get(route('banks.create'));
 
-        $response->assertOk()->assertViewIs('app.banks.create');
+        $response->assertOk()->assertViewIs('banks.create');
     }
 
     /**
@@ -82,7 +82,7 @@ class BankControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.banks.show')
+            ->assertViewIs('banks.show')
             ->assertViewHas('bank');
     }
 
@@ -97,7 +97,7 @@ class BankControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.banks.edit')
+            ->assertViewIs('banks.edit')
             ->assertViewHas('bank');
     }
 

@@ -41,7 +41,7 @@ class ComplaintControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.complaints.index')
+            ->assertViewIs('complaints.index')
             ->assertViewHas('complaints');
     }
 
@@ -52,7 +52,7 @@ class ComplaintControllerTest extends TestCase
     {
         $response = $this->get(route('complaints.create'));
 
-        $response->assertOk()->assertViewIs('app.complaints.create');
+        $response->assertOk()->assertViewIs('complaints.create');
     }
 
     /**
@@ -84,7 +84,7 @@ class ComplaintControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.complaints.show')
+            ->assertViewIs('complaints.show')
             ->assertViewHas('complaint');
     }
 
@@ -99,7 +99,7 @@ class ComplaintControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.complaints.edit')
+            ->assertViewIs('complaints.edit')
             ->assertViewHas('complaint');
     }
 

@@ -27,10 +27,7 @@ class KioskParticipantController extends Controller
             ->paginate(5)
             ->withQueryString();
 
-        return view(
-            'app.kiosk_participants.index',
-            compact('kioskParticipants', 'search')
-        );
+        return view('kiosk_participants.index', compact('kioskParticipants', 'search'));
     }
 
     /**
@@ -45,10 +42,7 @@ class KioskParticipantController extends Controller
         $kiosks = Kiosk::pluck('name', 'id');
         $banks = Bank::pluck('name', 'id');
 
-        return view(
-            'app.kiosk_participants.create',
-            compact('users', 'kiosks', 'banks')
-        );
+        return view('kiosk_participants.create', compact('users', 'kiosks', 'banks'));
     }
 
     /**
@@ -77,7 +71,7 @@ class KioskParticipantController extends Controller
     {
         $this->authorize('view', $kioskParticipant);
 
-        return view('app.kiosk_participants.show', compact('kioskParticipant'));
+        return view('kiosk_participants.show', compact('kioskParticipant'));
     }
 
     /**
@@ -93,10 +87,7 @@ class KioskParticipantController extends Controller
         $kiosks = Kiosk::pluck('name', 'id');
         $banks = Bank::pluck('name', 'id');
 
-        return view(
-            'app.kiosk_participants.edit',
-            compact('kioskParticipant', 'users', 'kiosks', 'banks')
-        );
+        return view('kiosk_participants.edit', compact('kioskParticipant', 'users', 'kiosks', 'banks'));
     }
 
     /**

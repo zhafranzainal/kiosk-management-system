@@ -24,10 +24,7 @@ class BusinessTypeController extends Controller
             ->paginate(5)
             ->withQueryString();
 
-        return view(
-            'app.business_types.index',
-            compact('businessTypes', 'search')
-        );
+        return view('business_types.index', compact('businessTypes', 'search'));
     }
 
     /**
@@ -38,7 +35,7 @@ class BusinessTypeController extends Controller
     {
         $this->authorize('create', BusinessType::class);
 
-        return view('app.business_types.create');
+        return view('business_types.create');
     }
 
     /**
@@ -67,7 +64,7 @@ class BusinessTypeController extends Controller
     {
         $this->authorize('view', $businessType);
 
-        return view('app.business_types.show', compact('businessType'));
+        return view('business_types.show', compact('businessType'));
     }
 
     /**
@@ -79,7 +76,7 @@ class BusinessTypeController extends Controller
     {
         $this->authorize('update', $businessType);
 
-        return view('app.business_types.edit', compact('businessType'));
+        return view('business_types.edit', compact('businessType'));
     }
 
     /**

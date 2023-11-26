@@ -24,7 +24,7 @@ class CourseController extends Controller
             ->paginate(5)
             ->withQueryString();
 
-        return view('app.courses.index', compact('courses', 'search'));
+        return view('courses.index', compact('courses', 'search'));
     }
 
     /**
@@ -35,7 +35,7 @@ class CourseController extends Controller
     {
         $this->authorize('create', Course::class);
 
-        return view('app.courses.create');
+        return view('courses.create');
     }
 
     /**
@@ -64,7 +64,7 @@ class CourseController extends Controller
     {
         $this->authorize('view', $course);
 
-        return view('app.courses.show', compact('course'));
+        return view('courses.show', compact('course'));
     }
 
     /**
@@ -76,7 +76,7 @@ class CourseController extends Controller
     {
         $this->authorize('update', $course);
 
-        return view('app.courses.edit', compact('course'));
+        return view('courses.edit', compact('course'));
     }
 
     /**

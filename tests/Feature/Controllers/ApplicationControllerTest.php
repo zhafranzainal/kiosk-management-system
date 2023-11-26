@@ -42,7 +42,7 @@ class ApplicationControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.applications.index')
+            ->assertViewIs('applications.index')
             ->assertViewHas('applications');
     }
 
@@ -53,7 +53,7 @@ class ApplicationControllerTest extends TestCase
     {
         $response = $this->get(route('applications.create'));
 
-        $response->assertOk()->assertViewIs('app.applications.create');
+        $response->assertOk()->assertViewIs('applications.create');
     }
 
     /**
@@ -85,7 +85,7 @@ class ApplicationControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.applications.show')
+            ->assertViewIs('applications.show')
             ->assertViewHas('application');
     }
 
@@ -100,7 +100,7 @@ class ApplicationControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.applications.edit')
+            ->assertViewIs('applications.edit')
             ->assertViewHas('application');
     }
 

@@ -42,7 +42,7 @@ class KioskParticipantControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.kiosk_participants.index')
+            ->assertViewIs('kiosk_participants.index')
             ->assertViewHas('kioskParticipants');
     }
 
@@ -53,7 +53,7 @@ class KioskParticipantControllerTest extends TestCase
     {
         $response = $this->get(route('kiosk-participants.create'));
 
-        $response->assertOk()->assertViewIs('app.kiosk_participants.create');
+        $response->assertOk()->assertViewIs('kiosk_participants.create');
     }
 
     /**
@@ -89,7 +89,7 @@ class KioskParticipantControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.kiosk_participants.show')
+            ->assertViewIs('kiosk_participants.show')
             ->assertViewHas('kioskParticipant');
     }
 
@@ -106,7 +106,7 @@ class KioskParticipantControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.kiosk_participants.edit')
+            ->assertViewIs('kiosk_participants.edit')
             ->assertViewHas('kioskParticipant');
     }
 

@@ -27,10 +27,7 @@ class ApplicationController extends Controller
             ->paginate(5)
             ->withQueryString();
 
-        return view(
-            'app.applications.index',
-            compact('applications', 'search')
-        );
+        return view('applications.index', compact('applications', 'search'));
     }
 
     /**
@@ -45,10 +42,7 @@ class ApplicationController extends Controller
         $kiosks = Kiosk::pluck('name', 'id');
         $users = User::pluck('name', 'id');
 
-        return view(
-            'app.applications.create',
-            compact('transactions', 'kiosks', 'users')
-        );
+        return view('applications.create', compact('transactions', 'kiosks', 'users'));
     }
 
     /**
@@ -77,7 +71,7 @@ class ApplicationController extends Controller
     {
         $this->authorize('view', $application);
 
-        return view('app.applications.show', compact('application'));
+        return view('applications.show', compact('application'));
     }
 
     /**
@@ -93,10 +87,7 @@ class ApplicationController extends Controller
         $kiosks = Kiosk::pluck('name', 'id');
         $users = User::pluck('name', 'id');
 
-        return view(
-            'app.applications.edit',
-            compact('application', 'transactions', 'kiosks', 'users')
-        );
+        return view('applications.edit', compact('application', 'transactions', 'kiosks', 'users'));
     }
 
     /**

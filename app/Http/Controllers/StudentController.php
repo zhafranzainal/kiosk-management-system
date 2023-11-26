@@ -26,7 +26,7 @@ class StudentController extends Controller
             ->paginate(5)
             ->withQueryString();
 
-        return view('app.students.index', compact('students', 'search'));
+        return view('students.index', compact('students', 'search'));
     }
 
     /**
@@ -40,10 +40,7 @@ class StudentController extends Controller
         $kioskParticipants = KioskParticipant::pluck('account_no', 'id');
         $courses = Course::pluck('name', 'id');
 
-        return view(
-            'app.students.create',
-            compact('kioskParticipants', 'courses')
-        );
+        return view('students.create', compact('kioskParticipants', 'courses'));
     }
 
     /**
@@ -72,7 +69,7 @@ class StudentController extends Controller
     {
         $this->authorize('view', $student);
 
-        return view('app.students.show', compact('student'));
+        return view('students.show', compact('student'));
     }
 
     /**
@@ -87,10 +84,7 @@ class StudentController extends Controller
         $kioskParticipants = KioskParticipant::pluck('account_no', 'id');
         $courses = Course::pluck('name', 'id');
 
-        return view(
-            'app.students.edit',
-            compact('student', 'kioskParticipants', 'courses')
-        );
+        return view('students.edit', compact('student', 'kioskParticipants', 'courses'));
     }
 
     /**

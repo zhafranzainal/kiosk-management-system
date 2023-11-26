@@ -24,7 +24,7 @@ class BankController extends Controller
             ->paginate(5)
             ->withQueryString();
 
-        return view('app.banks.index', compact('banks', 'search'));
+        return view('banks.index', compact('banks', 'search'));
     }
 
     /**
@@ -35,7 +35,7 @@ class BankController extends Controller
     {
         $this->authorize('create', Bank::class);
 
-        return view('app.banks.create');
+        return view('banks.create');
     }
 
     /**
@@ -64,7 +64,7 @@ class BankController extends Controller
     {
         $this->authorize('view', $bank);
 
-        return view('app.banks.show', compact('bank'));
+        return view('banks.show', compact('bank'));
     }
 
     /**
@@ -76,7 +76,7 @@ class BankController extends Controller
     {
         $this->authorize('update', $bank);
 
-        return view('app.banks.edit', compact('bank'));
+        return view('banks.edit', compact('bank'));
     }
 
     /**

@@ -39,7 +39,7 @@ class TransactionControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.transactions.index')
+            ->assertViewIs('transactions.index')
             ->assertViewHas('transactions');
     }
 
@@ -50,7 +50,7 @@ class TransactionControllerTest extends TestCase
     {
         $response = $this->get(route('transactions.create'));
 
-        $response->assertOk()->assertViewIs('app.transactions.create');
+        $response->assertOk()->assertViewIs('transactions.create');
     }
 
     /**
@@ -82,7 +82,7 @@ class TransactionControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.transactions.show')
+            ->assertViewIs('transactions.show')
             ->assertViewHas('transaction');
     }
 
@@ -97,7 +97,7 @@ class TransactionControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.transactions.edit')
+            ->assertViewIs('transactions.edit')
             ->assertViewHas('transaction');
     }
 

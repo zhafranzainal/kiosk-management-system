@@ -25,7 +25,7 @@ class SaleController extends Controller
             ->paginate(5)
             ->withQueryString();
 
-        return view('app.sales.index', compact('sales', 'search'));
+        return view('sales.index', compact('sales', 'search'));
     }
 
     /**
@@ -38,7 +38,7 @@ class SaleController extends Controller
 
         $kioskParticipants = KioskParticipant::pluck('account_no', 'id');
 
-        return view('app.sales.create', compact('kioskParticipants'));
+        return view('sales.create', compact('kioskParticipants'));
     }
 
     /**
@@ -67,7 +67,7 @@ class SaleController extends Controller
     {
         $this->authorize('view', $sale);
 
-        return view('app.sales.show', compact('sale'));
+        return view('sales.show', compact('sale'));
     }
 
     /**
@@ -81,7 +81,7 @@ class SaleController extends Controller
 
         $kioskParticipants = KioskParticipant::pluck('account_no', 'id');
 
-        return view('app.sales.edit', compact('sale', 'kioskParticipants'));
+        return view('sales.edit', compact('sale', 'kioskParticipants'));
     }
 
     /**
