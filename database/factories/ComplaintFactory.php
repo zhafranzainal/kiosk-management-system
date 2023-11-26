@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Complaint;
-use Illuminate\Support\Str;
+use App\Models\KioskParticipant;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ComplaintFactory extends Factory
@@ -23,10 +23,10 @@ class ComplaintFactory extends Factory
     public function definition()
     {
         return [
-            'description' => $this->faker->sentence(15),
+            'kiosk_participant_id' => KioskParticipant::inRandomOrder()->pluck('id')->first(),
+            'user_id' => KioskParticipant::inRandomOrder()->pluck('id')->first(),
+            'description' => $this->faker->sentence(),
             'status' => 'Pending',
-            'kiosk_participant_id' => \App\Models\KioskParticipant::factory(),
-            'user_id' => \App\Models\User::factory(),
         ];
     }
 }

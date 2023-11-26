@@ -14,8 +14,24 @@ class BusinessTypeSeeder extends Seeder
      */
     public function run()
     {
-        BusinessType::factory()
-            ->count(5)
-            ->create();
+        BusinessType::factory()->create([
+            'name' => 'Food Only',
+        ]);
+
+        BusinessType::factory()->create([
+            'name' => 'Beverages Only',
+        ]);
+
+        BusinessType::factory()->create([
+            'name' => 'Food and Beverages',
+        ]);
+
+        BusinessType::factory()->create([
+            'name' => 'Accessories',
+        ]);
+
+        BusinessType::factory()->create([
+            'name' => 'Clothing',
+        ]);
     }
 }

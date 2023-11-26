@@ -14,8 +14,6 @@ class KioskParticipantSeeder extends Seeder
      */
     public function run()
     {
-        KioskParticipant::factory()
-            ->count(5)
-            ->create();
+        $kioskParticipants = KioskParticipant::factory()->count(5)->create();
     }
 }

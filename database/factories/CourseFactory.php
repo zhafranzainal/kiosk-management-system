@@ -3,7 +3,6 @@
 namespace Database\Factories;
 
 use App\Models\Course;
-use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class CourseFactory extends Factory
@@ -23,7 +22,7 @@ class CourseFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name(),
+            'name' => $this->faker->word(3),
         ];
     }
 }

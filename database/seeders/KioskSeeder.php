@@ -14,8 +14,6 @@ class KioskSeeder extends Seeder
      */
     public function run()
     {
-        Kiosk::factory()
-            ->count(5)
-            ->create();
+        Kiosk::factory()->count(5)->create();
     }
 }

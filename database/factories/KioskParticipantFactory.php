@@ -2,8 +2,10 @@
 
 namespace Database\Factories;
 
-use Illuminate\Support\Str;
+use App\Models\Bank;
+use App\Models\Kiosk;
 use App\Models\KioskParticipant;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class KioskParticipantFactory extends Factory
@@ -23,10 +25,10 @@ class KioskParticipantFactory extends Factory
     public function definition()
     {
         return [
-            'account_no' => $this->faker->text(255),
-            'kiosk_id' => \App\Models\Kiosk::factory(),
-            'bank_id' => \App\Models\Bank::factory(),
-            'user_id' => \App\Models\User::factory(),
+            'user_id' => User::factory(),
+            'kiosk_id' => Kiosk::inRandomOrder()->pluck('id')->first(),
+            'bank_id' => Bank::inRandomOrder()->pluck('id')->first(),
+            'account_no' => $this->faker->bankAccountNumber(),
         ];
     }
 }

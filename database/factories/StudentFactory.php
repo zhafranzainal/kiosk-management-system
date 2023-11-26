@@ -2,8 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\Course;
+use App\Models\KioskParticipant;
 use App\Models\Student;
-use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class StudentFactory extends Factory
@@ -23,11 +24,11 @@ class StudentFactory extends Factory
     public function definition()
     {
         return [
-            'matric_no' => $this->faker->text(255),
-            'year' => $this->faker->numberBetween(0, 127),
-            'semester' => $this->faker->numberBetween(0, 127),
-            'course_id' => \App\Models\Course::factory(),
-            'kiosk_participant_id' => \App\Models\KioskParticipant::factory(),
+            'kiosk_participant_id' => KioskParticipant::factory(),
+            'course_id' => Course::inRandomOrder()->pluck('id')->first(),
+            'matric_no' => $this->faker->bothify('CB20###'),
+            'year' => $this->faker->numberBetween(1, 4),
+            'semester' => $this->faker->numberBetween(1, 3),
         ];
     }
 }

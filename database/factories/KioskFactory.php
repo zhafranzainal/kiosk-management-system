@@ -2,8 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\BusinessType;
 use App\Models\Kiosk;
-use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class KioskFactory extends Factory
@@ -23,12 +23,12 @@ class KioskFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name(),
-            'location' => $this->faker->text(255),
+            'business_type_id' => BusinessType::inRandomOrder()->pluck('id')->first(),
+            'name' => $this->faker->word(),
+            'location' => $this->faker->sentence(),
             'suggested_action' => 'No Action',
-            'comment' => $this->faker->text(),
+            'comment' => $this->faker->sentence(),
             'status' => 'Inactive',
-            'business_type_id' => \App\Models\BusinessType::factory(),
         ];
     }
 }

@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Transaction;
-use Illuminate\Support\Str;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class TransactionFactory extends Factory
@@ -23,9 +23,9 @@ class TransactionFactory extends Factory
     public function definition()
     {
         return [
-            'amount' => $this->faker->randomNumber(2),
+            'user_id' => User::inRandomOrder()->pluck('id')->first(),
+            'amount' => $this->faker->randomFloat(2, 0, 1000),
             'status' => 'Pending',
-            'user_id' => \App\Models\User::factory(),
         ];
     }
 }

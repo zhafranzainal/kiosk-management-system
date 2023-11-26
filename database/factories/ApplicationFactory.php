@@ -3,7 +3,9 @@
 namespace Database\Factories;
 
 use App\Models\Application;
-use Illuminate\Support\Str;
+use App\Models\Kiosk;
+use App\Models\Transaction;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ApplicationFactory extends Factory
@@ -23,12 +25,12 @@ class ApplicationFactory extends Factory
     public function definition()
     {
         return [
+            'transaction_id' => Transaction::inRandomOrder()->pluck('id')->first(),
+            'kiosk_id' => Kiosk::inRandomOrder()->pluck('id')->first(),
+            'user_id' => User::inRandomOrder()->pluck('id')->first(),
             'start_date' => $this->faker->date(),
             'end_date' => $this->faker->date(),
             'status' => 'Pending',
-            'user_id' => \App\Models\User::factory(),
-            'kiosk_id' => \App\Models\Kiosk::factory(),
-            'transaction_id' => \App\Models\Transaction::factory(),
         ];
     }
 }

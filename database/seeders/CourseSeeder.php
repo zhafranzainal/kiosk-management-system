@@ -14,8 +14,10 @@ class CourseSeeder extends Seeder
      */
     public function run()
     {
-        Course::factory()
-            ->count(5)
-            ->create();
+        Course::create(['name' => 'Computer Science']);
+        Course::create(['name' => 'Software Engineering']);
+        Course::create(['name' => 'Computer Systems & Networking']);
+        Course::create(['name' => 'Graphics & Multimedia Technology']);
+        Course::create(['name' => 'Cyber Security']);
     }
 }
