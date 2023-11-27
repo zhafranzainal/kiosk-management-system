@@ -50,7 +50,7 @@
                         <thead class="text-gray-700">
                             <tr>
                                 <th class="px-4 py-3 text-left">
-                                    @lang('crud.kiosks.inputs.business_type_id')
+                                    No.
                                 </th>
                                 <th class="px-4 py-3 text-left">
                                     @lang('crud.kiosks.inputs.name')
@@ -59,10 +59,7 @@
                                     @lang('crud.kiosks.inputs.location')
                                 </th>
                                 <th class="px-4 py-3 text-left">
-                                    @lang('crud.kiosks.inputs.suggested_action')
-                                </th>
-                                <th class="px-4 py-3 text-left">
-                                    @lang('crud.kiosks.inputs.comment')
+                                    @lang('crud.kiosks.inputs.business_type_id')
                                 </th>
                                 <th class="px-4 py-3 text-left">
                                     @lang('crud.kiosks.inputs.status')
@@ -77,7 +74,7 @@
                                 <tr class="hover:bg-gray-50">
 
                                     <td class="px-4 py-3 text-left">
-                                        {{ optional($kiosk->businessType)->name ?? '-' }}
+                                        {{ $kiosk->id ?? '-' }}
                                     </td>
 
                                     <td class="px-4 py-3 text-left">
@@ -89,11 +86,7 @@
                                     </td>
 
                                     <td class="px-4 py-3 text-left">
-                                        {{ $kiosk->suggested_action ?? '-' }}
-                                    </td>
-
-                                    <td class="px-4 py-3 text-left">
-                                        {{ $kiosk->comment ?? '-' }}
+                                        {{ optional($kiosk->businessType)->name ?? '-' }}
                                     </td>
 
                                     <td class="px-4 py-3 text-left">
