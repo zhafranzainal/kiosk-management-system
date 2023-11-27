@@ -61,7 +61,7 @@
                                 <th class="px-4 py-3 text-left">
                                     @lang('crud.kiosk_participants.inputs.account_no')
                                 </th>
-                                <th></th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody class="text-gray-600">

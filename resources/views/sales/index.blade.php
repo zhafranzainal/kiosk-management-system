@@ -54,7 +54,7 @@
                                 <th class="px-4 py-3 text-right">
                                     @lang('crud.sales.inputs.amount')
                                 </th>
-                                <th></th>
+                                <th>Action</th>
                             </tr>
                         </thead>
 

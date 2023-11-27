@@ -61,7 +61,7 @@
                                 <th class="px-4 py-3 text-left">
                                     @lang('crud.users.inputs.mobile_no')
                                 </th>
-                                <th></th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody class="text-gray-600">

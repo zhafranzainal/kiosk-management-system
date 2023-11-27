@@ -52,7 +52,7 @@
                                 <th class="px-4 py-3 text-left">
                                     @lang('crud.courses.inputs.name')
                                 </th>
-                                <th></th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody class="text-gray-600">

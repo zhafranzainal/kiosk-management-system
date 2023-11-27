@@ -67,7 +67,7 @@
                                 <th class="px-4 py-3 text-left">
                                     @lang('crud.kiosks.inputs.status')
                                 </th>
-                                <th></th>
+                                <th>Action</th>
                             </tr>
                         </thead>
 
