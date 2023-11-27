@@ -29,7 +29,7 @@ class ApplicationUpdateRequest extends FormRequest
             'user_id' => ['required', 'exists:users,id'],
             'start_date' => ['required', 'date'],
             'end_date' => ['required', 'date'],
-            'status' => ['required', 'in:pending,accepted,rejected'],
+            'status' => ['required', 'in:Pending,Accepted,Rejected'],
         ];
     }
 }

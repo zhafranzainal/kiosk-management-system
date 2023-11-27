@@ -41,7 +41,7 @@ class UserTransactionsController extends Controller
 
         $validated = $request->validate([
             'amount' => ['nullable', 'numeric'],
-            'status' => ['required', 'in:pending,successful,failed'],
+            'status' => ['required', 'in:Pending,Successful,Failed'],
         ]);
 
         $transaction = $user->transactions()->create($validated);

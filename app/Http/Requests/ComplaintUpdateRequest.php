@@ -30,7 +30,7 @@ class ComplaintUpdateRequest extends FormRequest
             ],
             'user_id' => ['nullable', 'exists:users,id'],
             'description' => ['required', 'max:255', 'string'],
-            'status' => ['required', 'in:pending,in progress,completed'],
+            'status' => ['required', 'in:Pending,In Progress,Completed'],
         ];
     }
 }

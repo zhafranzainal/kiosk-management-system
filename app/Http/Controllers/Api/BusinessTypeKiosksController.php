@@ -44,10 +44,10 @@ class BusinessTypeKiosksController extends Controller
             'location' => ['required', 'max:255', 'string'],
             'suggested_action' => [
                 'nullable',
-                'in:no action,terminate,suspend,reassign',
+                'in:No Action,Terminate,Suspend,Reassign',
             ],
             'comment' => ['nullable', 'max:255', 'string'],
-            'status' => ['required', 'in:inactive,active,warning,repair'],
+            'status' => ['required', 'in:Inactive,Active,Warning,Repair'],
         ]);
 
         $kiosk = $businessType->kiosks()->create($validated);

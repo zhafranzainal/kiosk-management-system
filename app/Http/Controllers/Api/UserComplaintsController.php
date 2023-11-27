@@ -45,7 +45,7 @@ class UserComplaintsController extends Controller
                 'exists:kiosk_participants,id',
             ],
             'description' => ['required', 'max:255', 'string'],
-            'status' => ['required', 'in:pending,in progress,completed'],
+            'status' => ['required', 'in:Pending,In Progress,Completed'],
         ]);
 
         $complaint = $user->complaints()->create($validated);

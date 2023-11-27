@@ -44,7 +44,7 @@ class UserApplicationsController extends Controller
             'kiosk_id' => ['required', 'exists:kiosks,id'],
             'start_date' => ['required', 'date'],
             'end_date' => ['required', 'date'],
-            'status' => ['required', 'in:pending,accepted,rejected'],
+            'status' => ['required', 'in:Pending,Accepted,Rejected'],
         ]);
 
         $application = $user->applications()->create($validated);

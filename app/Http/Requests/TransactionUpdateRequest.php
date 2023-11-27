@@ -26,7 +26,7 @@ class TransactionUpdateRequest extends FormRequest
         return [
             'user_id' => ['required', 'exists:users,id'],
             'amount' => ['nullable', 'numeric'],
-            'status' => ['required', 'in:pending,successful,failed'],
+            'status' => ['required', 'in:Pending,Successful,Failed'],
         ];
     }
 }

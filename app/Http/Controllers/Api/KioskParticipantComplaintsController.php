@@ -42,7 +42,7 @@ class KioskParticipantComplaintsController extends Controller
         $validated = $request->validate([
             'user_id' => ['nullable', 'exists:users,id'],
             'description' => ['required', 'max:255', 'string'],
-            'status' => ['required', 'in:pending,in progress,completed'],
+            'status' => ['required', 'in:Pending,In Progress,Completed'],
         ]);
 
         $complaint = $kioskParticipant->complaints()->create($validated);
