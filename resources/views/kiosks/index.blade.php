@@ -96,8 +96,38 @@
                                         {{ optional($kiosk->businessType)->name ?? '-' }}
                                     </td>
 
-                                    <td class="px-4 py-3 text-left">
+                                    <td class="px-4 py-3 text-left" style="display: flex; align-items: center;">
+
+                                        @php
+
+                                            $status = strtolower($kiosk->status ?? '-');
+                                            $circleColor = '';
+
+                                            switch ($status) {
+                                                case 'inactive':
+                                                    $circleColor = 'gray';
+                                                    break;
+                                                case 'active':
+                                                    $circleColor = 'green';
+                                                    break;
+                                                case 'warning':
+                                                    $circleColor = 'red';
+                                                    break;
+                                                case 'repair':
+                                                    $circleColor = 'orange';
+                                                    break;
+                                                default:
+                                                    $circleColor = 'transparent';
+                                                    break;
+                                            }
+
+                                        @endphp
+
+                                        <span class="rounded-full h-1 w-1 mr-2"
+                                            style="background-color: {{ $circleColor }};"></span>
+
                                         {{ $kiosk->status ?? '-' }}
+
                                     </td>
 
                                     <td class="px-4 py-3 text-center" style="width: 134px;">
