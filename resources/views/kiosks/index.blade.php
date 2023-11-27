@@ -53,6 +53,9 @@
                                     No.
                                 </th>
                                 <th class="px-4 py-3 text-left">
+                                    Kiosk Number
+                                </th>
+                                <th class="px-4 py-3 text-left">
                                     @lang('crud.kiosks.inputs.name')
                                 </th>
                                 <th class="px-4 py-3 text-left">
@@ -70,11 +73,15 @@
 
                         <tbody class="text-gray-600">
 
-                            @forelse($kiosks as $kiosk)
+                            @forelse($kiosks as $index => $kiosk)
                                 <tr class="hover:bg-gray-50">
 
                                     <td class="px-4 py-3 text-left">
-                                        {{ $kiosk->id ?? '-' }}
+                                        {{ $index + 1 }}
+                                    </td>
+
+                                    <td class="px-4 py-3 text-left">
+                                        FKK{{ str_pad($kiosk->id, 2, '0', STR_PAD_LEFT) }}
                                     </td>
 
                                     <td class="px-4 py-3 text-left">
