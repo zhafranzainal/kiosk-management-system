@@ -20,75 +20,71 @@
                     </x-jet-nav-link>
                 </div>
 
-                <x-nav-dropdown title="Apps" align="right" width="48">
+                @can('view-any', App\Models\Application::class)
+                    <x-jet-nav-link href="{{ route('applications.index') }}" :active="request()->routeIs('applications.index')">
+                        Applications
+                    </x-jet-nav-link>
+                @endcan
 
-                    @can('view-any', App\Models\Application::class)
-                        <x-dropdown-link href="{{ route('applications.index') }}">
-                            Applications
-                        </x-dropdown-link>
-                    @endcan
+                @can('view-any', App\Models\Bank::class)
+                    <x-jet-nav-link href="{{ route('banks.index') }}" :active="request()->routeIs('banks.index')">
+                        Banks
+                    </x-jet-nav-link>
+                @endcan
 
-                    @can('view-any', App\Models\Bank::class)
-                        <x-dropdown-link href="{{ route('banks.index') }}">
-                            Banks
-                        </x-dropdown-link>
-                    @endcan
+                @can('view-any', App\Models\BusinessType::class)
+                    <x-jet-nav-link href="{{ route('business-types.index') }}" :active="request()->routeIs('business-types.index')">
+                        Business Types
+                    </x-jet-nav-link>
+                @endcan
 
-                    @can('view-any', App\Models\BusinessType::class)
-                        <x-dropdown-link href="{{ route('business-types.index') }}">
-                            Business Types
-                        </x-dropdown-link>
-                    @endcan
+                @can('view-any', App\Models\Complaint::class)
+                    <x-jet-nav-link href="{{ route('complaints.index') }}" :active="request()->routeIs('complaints.index')">
+                        Complaints
+                    </x-jet-nav-link>
+                @endcan
 
-                    @can('view-any', App\Models\Complaint::class)
-                        <x-dropdown-link href="{{ route('complaints.index') }}">
-                            Complaints
-                        </x-dropdown-link>
-                    @endcan
+                @can('view-any', App\Models\Course::class)
+                    <x-jet-nav-link href="{{ route('courses.index') }}" :active="request()->routeIs('courses.index')">
+                        Courses
+                    </x-jet-nav-link>
+                @endcan
 
-                    @can('view-any', App\Models\Course::class)
-                        <x-dropdown-link href="{{ route('courses.index') }}">
-                            Courses
-                        </x-dropdown-link>
-                    @endcan
+                @can('view-any', App\Models\Kiosk::class)
+                    <x-jet-nav-link href="{{ route('kiosks.index') }}" :active="request()->routeIs('kiosks.index')">
+                        Kiosks
+                    </x-jet-nav-link>
+                @endcan
 
-                    @can('view-any', App\Models\Kiosk::class)
-                        <x-dropdown-link href="{{ route('kiosks.index') }}">
-                            Kiosks
-                        </x-dropdown-link>
-                    @endcan
+                @can('view-any', App\Models\KioskParticipant::class)
+                    <x-jet-nav-link href="{{ route('kiosk-participants.index') }}" :active="request()->routeIs('kiosk-participants.index')">
+                        Kiosk Participants
+                    </x-jet-nav-link>
+                @endcan
 
-                    @can('view-any', App\Models\KioskParticipant::class)
-                        <x-dropdown-link href="{{ route('kiosk-participants.index') }}">
-                            Kiosk Participants
-                        </x-dropdown-link>
-                    @endcan
+                @can('view-any', App\Models\Sale::class)
+                    <x-jet-nav-link href="{{ route('sales.index') }}" :active="request()->routeIs('sales.index')">
+                        Sales
+                    </x-jet-nav-link>
+                @endcan
 
-                    @can('view-any', App\Models\Sale::class)
-                        <x-dropdown-link href="{{ route('sales.index') }}">
-                            Sales
-                        </x-dropdown-link>
-                    @endcan
+                @can('view-any', App\Models\Student::class)
+                    <x-jet-nav-link href="{{ route('students.index') }}" :active="request()->routeIs('students.index')">
+                        Students
+                    </x-jet-nav-link>
+                @endcan
 
-                    @can('view-any', App\Models\Student::class)
-                        <x-dropdown-link href="{{ route('students.index') }}">
-                            Students
-                        </x-dropdown-link>
-                    @endcan
+                @can('view-any', App\Models\Transaction::class)
+                    <x-jet-nav-link href="{{ route('transactions.index') }}" :active="request()->routeIs('transactions.index')">
+                        Transactions
+                    </x-jet-nav-link>
+                @endcan
 
-                    @can('view-any', App\Models\Transaction::class)
-                        <x-dropdown-link href="{{ route('transactions.index') }}">
-                            Transactions
-                        </x-dropdown-link>
-                    @endcan
-
-                    @can('view-any', App\Models\User::class)
-                        <x-dropdown-link href="{{ route('users.index') }}">
-                            Users
-                        </x-dropdown-link>
-                    @endcan
-
-                </x-nav-dropdown>
+                @can('view-any', App\Models\User::class)
+                    <x-jet-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users.index')">
+                        Users
+                    </x-jet-nav-link>
+                @endcan
 
                 @if (Auth::user()->can('view-any', Spatie\Permission\Models\Role::class) ||
                         Auth::user()->can('view-any', Spatie\Permission\Models\Permission::class))
