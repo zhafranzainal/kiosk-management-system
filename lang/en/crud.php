@@ -1,6 +1,7 @@
 <?php
 
 return [
+
     'common' => [
         'actions' => 'Actions',
         'create' => 'Create',
@@ -109,11 +110,11 @@ return [
 
     'kiosk_participants' => [
         'name' => 'Kiosk Participants',
-        'index_title' => 'KioskParticipants List',
-        'new_title' => 'New Kiosk participant',
-        'create_title' => 'Create KioskParticipant',
-        'edit_title' => 'Edit KioskParticipant',
-        'show_title' => 'Show KioskParticipant',
+        'index_title' => 'Kiosk Participants List',
+        'new_title' => 'New Kiosk Participant',
+        'create_title' => 'Create Kiosk Participant',
+        'edit_title' => 'Edit Kiosk Participant',
+        'show_title' => 'Show Kiosk Participant',
         'inputs' => [
             'user_id' => 'User',
             'kiosk_id' => 'Kiosk',
@@ -202,4 +203,5 @@ return [
             'name' => 'Name',
         ],
     ],
+
 ];

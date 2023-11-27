@@ -20,11 +20,27 @@
                     </x-jet-nav-link>
                 </div>
 
-                @can('view-any', App\Models\User::class)
-                    <x-jet-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users.index')">
-                        Users
-                    </x-jet-nav-link>
-                @endcan
+                <x-nav-dropdown title="Manage Users" align="right" width="48">
+
+                    @can('view-any', App\Models\User::class)
+                        <x-dropdown-link href="{{ route('users.index') }}">
+                            All Users
+                        </x-dropdown-link>
+                    @endcan
+
+                    @can('view-any', App\Models\KioskParticipant::class)
+                        <x-dropdown-link href="{{ route('kiosk-participants.index') }}">
+                            Kiosk Participants
+                        </x-dropdown-link>
+                    @endcan
+
+                    @can('view-any', App\Models\Student::class)
+                        <x-dropdown-link href="{{ route('students.index') }}">
+                            Students
+                        </x-dropdown-link>
+                    @endcan
+
+                </x-nav-dropdown>
 
                 @can('view-any', App\Models\Kiosk::class)
                     <x-jet-nav-link href="{{ route('kiosks.index') }}" :active="request()->routeIs('kiosks.index')">
@@ -71,18 +87,6 @@
                 @can('view-any', App\Models\Course::class)
                     <x-jet-nav-link href="{{ route('courses.index') }}" :active="request()->routeIs('courses.index')">
                         Courses
-                    </x-jet-nav-link>
-                @endcan
-
-                @can('view-any', App\Models\KioskParticipant::class)
-                    <x-jet-nav-link href="{{ route('kiosk-participants.index') }}" :active="request()->routeIs('kiosk-participants.index')">
-                        Kiosk Participants
-                    </x-jet-nav-link>
-                @endcan
-
-                @can('view-any', App\Models\Student::class)
-                    <x-jet-nav-link href="{{ route('students.index') }}" :active="request()->routeIs('students.index')">
-                        Students
                     </x-jet-nav-link>
                 @endcan
 
