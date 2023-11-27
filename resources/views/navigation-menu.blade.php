@@ -44,6 +44,18 @@
                     </x-jet-nav-link>
                 @endcan
 
+                @can('view-any', App\Models\Transaction::class)
+                    <x-jet-nav-link href="{{ route('transactions.index') }}" :active="request()->routeIs('transactions.index')">
+                        Kiosk Payments
+                    </x-jet-nav-link>
+                @endcan
+
+                @can('view-any', App\Models\Complaint::class)
+                    <x-jet-nav-link href="{{ route('complaints.index') }}" :active="request()->routeIs('complaints.index')">
+                        Kiosk Complaints
+                    </x-jet-nav-link>
+                @endcan
+
                 @can('view-any', App\Models\Bank::class)
                     <x-jet-nav-link href="{{ route('banks.index') }}" :active="request()->routeIs('banks.index')">
                         Banks
@@ -53,12 +65,6 @@
                 @can('view-any', App\Models\BusinessType::class)
                     <x-jet-nav-link href="{{ route('business-types.index') }}" :active="request()->routeIs('business-types.index')">
                         Business Types
-                    </x-jet-nav-link>
-                @endcan
-
-                @can('view-any', App\Models\Complaint::class)
-                    <x-jet-nav-link href="{{ route('complaints.index') }}" :active="request()->routeIs('complaints.index')">
-                        Complaints
                     </x-jet-nav-link>
                 @endcan
 
@@ -77,12 +83,6 @@
                 @can('view-any', App\Models\Student::class)
                     <x-jet-nav-link href="{{ route('students.index') }}" :active="request()->routeIs('students.index')">
                         Students
-                    </x-jet-nav-link>
-                @endcan
-
-                @can('view-any', App\Models\Transaction::class)
-                    <x-jet-nav-link href="{{ route('transactions.index') }}" :active="request()->routeIs('transactions.index')">
-                        Transactions
                     </x-jet-nav-link>
                 @endcan
 
