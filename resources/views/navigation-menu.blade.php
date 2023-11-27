@@ -20,9 +20,27 @@
                     </x-jet-nav-link>
                 </div>
 
+                @can('view-any', App\Models\User::class)
+                    <x-jet-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users.index')">
+                        Users
+                    </x-jet-nav-link>
+                @endcan
+
+                @can('view-any', App\Models\Kiosk::class)
+                    <x-jet-nav-link href="{{ route('kiosks.index') }}" :active="request()->routeIs('kiosks.index')">
+                        Manage Kiosks
+                    </x-jet-nav-link>
+                @endcan
+
                 @can('view-any', App\Models\Application::class)
                     <x-jet-nav-link href="{{ route('applications.index') }}" :active="request()->routeIs('applications.index')">
-                        Applications
+                        Kiosk Applications
+                    </x-jet-nav-link>
+                @endcan
+
+                @can('view-any', App\Models\Sale::class)
+                    <x-jet-nav-link href="{{ route('sales.index') }}" :active="request()->routeIs('sales.index')">
+                        Kiosk Sales
                     </x-jet-nav-link>
                 @endcan
 
@@ -50,21 +68,9 @@
                     </x-jet-nav-link>
                 @endcan
 
-                @can('view-any', App\Models\Kiosk::class)
-                    <x-jet-nav-link href="{{ route('kiosks.index') }}" :active="request()->routeIs('kiosks.index')">
-                        Kiosks
-                    </x-jet-nav-link>
-                @endcan
-
                 @can('view-any', App\Models\KioskParticipant::class)
                     <x-jet-nav-link href="{{ route('kiosk-participants.index') }}" :active="request()->routeIs('kiosk-participants.index')">
                         Kiosk Participants
-                    </x-jet-nav-link>
-                @endcan
-
-                @can('view-any', App\Models\Sale::class)
-                    <x-jet-nav-link href="{{ route('sales.index') }}" :active="request()->routeIs('sales.index')">
-                        Sales
                     </x-jet-nav-link>
                 @endcan
 
@@ -77,12 +83,6 @@
                 @can('view-any', App\Models\Transaction::class)
                     <x-jet-nav-link href="{{ route('transactions.index') }}" :active="request()->routeIs('transactions.index')">
                         Transactions
-                    </x-jet-nav-link>
-                @endcan
-
-                @can('view-any', App\Models\User::class)
-                    <x-jet-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users.index')">
-                        Users
                     </x-jet-nav-link>
                 @endcan
 
