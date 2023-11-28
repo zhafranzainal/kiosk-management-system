@@ -22,7 +22,7 @@
 
     <x-inputs.group class="w-full">
         <x-inputs.text name="location" label="Kiosk Location" :value="old('location', $editing ? $kiosk->location : '')" maxlength="255"
-            placeholder="Short explanation of the location" required>
+            placeholder="Short explanation about the location" required>
         </x-inputs.text>
     </x-inputs.group>
 
