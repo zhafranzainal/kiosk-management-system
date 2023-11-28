@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('kiosks', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->foreignId('business_type_id');
+            $table->foreignId('business_type_id')->nullable();
             $table->string('name');
             $table->string('location');
             $table->enum('suggested_action', ['No Action', 'Terminate', 'Suspend', 'Reassign'])->default('No Action')->nullable();

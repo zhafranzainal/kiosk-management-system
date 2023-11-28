@@ -20,6 +20,11 @@
 
     </x-inputs.group>
 
+    <x-inputs.group class="w-full" style="display: none;">
+        <x-inputs.text name="name" label="Name" :value="old('name', $editing ? $kiosk->name : 'KIOSK FOR RENT')" maxlength="255" placeholder="Name" required>
+        </x-inputs.text>
+    </x-inputs.group>
+
     <x-inputs.group class="w-full">
         <x-inputs.text name="location" label="Kiosk Location" :value="old('location', $editing ? $kiosk->location : '')" maxlength="255"
             placeholder="Short explanation about the location" required>

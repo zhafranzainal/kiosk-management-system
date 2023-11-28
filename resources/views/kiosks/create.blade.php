@@ -33,6 +33,11 @@
 
                     </div>
 
+                    <br>
+                    @foreach ($errors->all() as $error)
+                        <span class="text-red-500 text-sm">{{ $error }}</span><br>
+                    @endforeach
+
                 </x-form>
 
             </x-partials.card>
