@@ -114,7 +114,7 @@
                                                     $displayText = 'Unavailable';
                                                     break;
                                                 case 'repair':
-                                                    $circleColor = 'orange';
+                                                    $circleColor = 'red';
                                                     $displayText = 'Repair';
                                                     break;
                                                 default:
