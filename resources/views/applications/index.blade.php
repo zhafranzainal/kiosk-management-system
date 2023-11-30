@@ -73,11 +73,7 @@
                                 </th>
 
                                 <th class="px-4 py-3 text-left">
-                                    @lang('crud.applications.inputs.start_date')
-                                </th>
-
-                                <th class="px-4 py-3 text-left">
-                                    @lang('crud.applications.inputs.end_date')
+                                    Business Period
                                 </th>
 
                                 <th class="px-4 py-3 text-left">
@@ -115,12 +111,11 @@
                                     </td>
 
                                     <td class="px-4 py-3 text-left">
-                                        {{ $application->start_date ?? '-' }}
+                                        {{ optional($application->start_date)->format('j F Y') ?? '-' }}
+                                        -
+                                        {{ optional($application->end_date)->format('j F Y') ?? '-' }}
                                     </td>
 
-                                    <td class="px-4 py-3 text-left">
-                                        {{ $application->end_date ?? '-' }}
-                                    </td>
 
                                     <td class="px-4 py-3 text-left">
                                         {{ $application->status ?? '-' }}
