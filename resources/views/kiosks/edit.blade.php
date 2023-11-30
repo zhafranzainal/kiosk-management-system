@@ -49,6 +49,44 @@
                             </x-inputs.text>
                         </x-inputs.group>
 
+                        <x-inputs.group class="w-full">
+                            <x-inputs.select name="business_type_id" label="Business Type" required>
+
+                                @php $selected = old('business_type_id', ($editing ? $kiosk->business_type_id : '')) @endphp
+
+                                <option disabled {{ empty($selected) ? 'selected' : '' }}>Please select the Business
+                                    Type
+                                </option>
+
+                                @foreach ($businessTypes as $value => $label)
+                                    <option value="{{ $value }}" {{ $selected == $value ? 'selected' : '' }}>
+                                        {{ $label }}
+                                    </option>
+                                @endforeach
+
+                            </x-inputs.select>
+                        </x-inputs.group>
+
+                        <x-inputs.group class="w-full">
+                            <x-inputs.select name="status" label="Status">
+
+                                @php $selected = old('status', ($editing ? $kiosk->status : 'Inactive')) @endphp
+
+                                <option value="Inactive" {{ $selected == 'Inactive' ? 'selected' : '' }}>Inactive
+                                </option>
+
+                                <option value="Active" {{ $selected == 'Active' ? 'selected' : '' }}>Active
+                                </option>
+
+                                <option value="Warning" {{ $selected == 'Warning' ? 'selected' : '' }}>Warning
+                                </option>
+
+                                <option value="Repair" {{ $selected == 'Repair' ? 'selected' : '' }}>Repair
+                                </option>
+
+                            </x-inputs.select>
+                        </x-inputs.group>
+
                     </div>
 
                     <div class="mt-10">
