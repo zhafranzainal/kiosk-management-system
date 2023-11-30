@@ -105,19 +105,21 @@
 
                                             switch ($status) {
                                                 case 'inactive':
-                                                    $circleColor = 'gray';
+                                                    $circleColor = 'limegreen';
+                                                    $displayText = 'Available';
                                                     break;
                                                 case 'active':
-                                                    $circleColor = 'green';
-                                                    break;
                                                 case 'warning':
-                                                    $circleColor = 'red';
+                                                    $circleColor = 'gray';
+                                                    $displayText = 'Unavailable';
                                                     break;
                                                 case 'repair':
                                                     $circleColor = 'orange';
+                                                    $displayText = 'Repair';
                                                     break;
                                                 default:
                                                     $circleColor = 'transparent';
+                                                    $displayText = '-';
                                                     break;
                                             }
 
@@ -126,7 +128,7 @@
                                         <span class="rounded-full h-1 w-1 mr-2"
                                             style="background-color: {{ $circleColor }};"></span>
 
-                                        {{ $kiosk->status ?? '-' }}
+                                        {{ $displayText }}
 
                                     </td>
 
