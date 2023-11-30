@@ -65,6 +65,10 @@
                                 </th>
 
                                 <th class="px-4 py-3 text-left">
+                                    Kiosk Number
+                                </th>
+
+                                <th class="px-4 py-3 text-left">
                                     @lang('crud.applications.inputs.kiosk_id')
                                 </th>
 
@@ -100,6 +104,10 @@
 
                                     <td class="px-4 py-3 text-left">
                                         {{ optional($application->user)->name ?? '-' }}
+                                    </td>
+
+                                    <td class="px-4 py-3 text-left">
+                                        FKK{{ str_pad(optional($application->kiosk)->id, 2, '0', STR_PAD_LEFT) }}
                                     </td>
 
                                     <td class="px-4 py-3 text-left">
