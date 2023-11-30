@@ -24,7 +24,7 @@
                         <x-inputs.group class="w-full">
 
                             @php
-                                function getKioskNumber()
+                                function getKioskNumberForCreate()
                                 {
                                     $nextId = \App\Models\Kiosk::max('id') + 1;
                                     $kioskNumber = 'FKK' . str_pad($nextId, 2, '0', STR_PAD_LEFT);
@@ -33,7 +33,7 @@
                                 }
                             @endphp
 
-                            <x-inputs.text name="kiosk_id" label="Kiosk Number" :value="getKioskNumber()" disabled
+                            <x-inputs.text name="kiosk_id" label="Kiosk Number" :value="getKioskNumberForCreate()" disabled
                                 style="background-color: #f5f5f5; color: #999;">
                             </x-inputs.text>
 
