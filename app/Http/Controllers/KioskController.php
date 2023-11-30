@@ -21,8 +21,7 @@ class KioskController extends Controller
         $search = $request->get('search', '');
 
         $kiosks = Kiosk::search($search)
-            ->latest()
-            ->paginate(5)
+            ->paginate(10)
             ->withQueryString();
 
         return view('kiosks.index', compact('kiosks', 'search'));
