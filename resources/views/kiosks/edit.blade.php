@@ -102,11 +102,6 @@
                             @lang('crud.common.back')
                         </a>
 
-                        <a href="{{ route('kiosks.create') }}" class="button">
-                            <i class="mr-1 icon ion-md-add text-primary"></i>
-                            @lang('crud.common.create')
-                        </a>
-
                         <button type="submit" class="button button-primary float-right">
                             <i class="mr-1 icon ion-md-save"></i>
                             @lang('crud.common.update')
