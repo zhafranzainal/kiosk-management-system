@@ -32,8 +32,8 @@ return [
         'show_title' => 'Show Application',
         'inputs' => [
             'transaction_id' => 'Transaction',
-            'kiosk_id' => 'Kiosk',
-            'user_id' => 'User',
+            'kiosk_id' => 'Kiosk Name',
+            'user_id' => 'Applicant Name',
             'start_date' => 'Start Date',
             'end_date' => 'End Date',
             'status' => 'Status',

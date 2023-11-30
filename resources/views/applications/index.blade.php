@@ -53,15 +53,15 @@
                             <tr>
 
                                 <th class="px-4 py-3 text-left">
-                                    @lang('crud.applications.inputs.transaction_id')
-                                </th>
-
-                                <th class="px-4 py-3 text-left">
-                                    @lang('crud.applications.inputs.kiosk_id')
+                                    No.
                                 </th>
 
                                 <th class="px-4 py-3 text-left">
                                     @lang('crud.applications.inputs.user_id')
+                                </th>
+
+                                <th class="px-4 py-3 text-left">
+                                    @lang('crud.applications.inputs.kiosk_id')
                                 </th>
 
                                 <th class="px-4 py-3 text-left">
@@ -87,15 +87,15 @@
                                 <tr class="hover:bg-gray-50">
 
                                     <td class="px-4 py-3 text-left">
-                                        {{ optional($application->transaction)->id ?? '-' }}
-                                    </td>
-
-                                    <td class="px-4 py-3 text-left">
-                                        {{ optional($application->kiosk)->name ?? '-' }}
+                                        {{ $application->id }}
                                     </td>
 
                                     <td class="px-4 py-3 text-left">
                                         {{ optional($application->user)->name ?? '-' }}
+                                    </td>
+
+                                    <td class="px-4 py-3 text-left">
+                                        {{ optional($application->kiosk)->name ?? '-' }}
                                     </td>
 
                                     <td class="px-4 py-3 text-left">
