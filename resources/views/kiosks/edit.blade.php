@@ -38,7 +38,7 @@
                         </x-inputs.group>
 
                         <x-inputs.group class="w-full">
-                            <x-inputs.text name="name" label="Name" :value="old('name', $editing ? $kiosk->name : 'Kiosk for Rent')" maxlength="255"
+                            <x-inputs.text name="name" label="Kiosk Name" :value="old('name', $editing ? $kiosk->name : 'Kiosk for Rent')" maxlength="255"
                                 placeholder="Name" required>
                             </x-inputs.text>
                         </x-inputs.group>

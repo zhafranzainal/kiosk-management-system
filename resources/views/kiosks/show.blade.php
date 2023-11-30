@@ -18,10 +18,16 @@
                 <div class="mt-4 px-4">
 
                     <div class="mb-4">
-                        <h5 class="font-medium text-gray-700">
-                            @lang('crud.kiosks.inputs.business_type_id')
+                        <h5 class="font-bold">
+                            General Info
                         </h5>
-                        <span>{{ optional($kiosk->businessType)->name ?? '-' }}</span>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5 class="font-medium text-gray-700">
+                            Kiosk Number
+                        </h5>
+                        <span>{{ $kiosk->id ? 'FKK' . str_pad($kiosk->id, 2, '0', STR_PAD_LEFT) : '-' }}</span>
                     </div>
 
                     <div class="mb-4">
@@ -33,6 +39,13 @@
 
                     <div class="mb-4">
                         <h5 class="font-medium text-gray-700">
+                            @lang('crud.kiosks.inputs.status')
+                        </h5>
+                        <span>{{ $kiosk->status ?? '-' }}</span>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5 class="font-medium text-gray-700">
                             @lang('crud.kiosks.inputs.location')
                         </h5>
                         <span>{{ $kiosk->location ?? '-' }}</span>
@@ -40,23 +53,9 @@
 
                     <div class="mb-4">
                         <h5 class="font-medium text-gray-700">
-                            @lang('crud.kiosks.inputs.suggested_action')
+                            @lang('crud.kiosks.inputs.business_type_id')
                         </h5>
-                        <span>{{ $kiosk->suggested_action ?? '-' }}</span>
-                    </div>
-
-                    <div class="mb-4">
-                        <h5 class="font-medium text-gray-700">
-                            @lang('crud.kiosks.inputs.comment')
-                        </h5>
-                        <span>{{ $kiosk->comment ?? '-' }}</span>
-                    </div>
-
-                    <div class="mb-4">
-                        <h5 class="font-medium text-gray-700">
-                            @lang('crud.kiosks.inputs.status')
-                        </h5>
-                        <span>{{ $kiosk->status ?? '-' }}</span>
+                        <span>{{ optional($kiosk->businessType)->name ?? '-' }}</span>
                     </div>
 
                 </div>
@@ -67,13 +66,6 @@
                         <i class="mr-1 icon ion-md-return-left"></i>
                         @lang('crud.common.back')
                     </a>
-
-                    @can('create', App\Models\Kiosk::class)
-                        <a href="{{ route('kiosks.create') }}" class="button">
-                            <i class="mr-1 icon ion-md-add"></i>
-                            @lang('crud.common.create')
-                        </a>
-                    @endcan
 
                 </div>
 

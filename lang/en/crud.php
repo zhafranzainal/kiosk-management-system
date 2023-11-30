@@ -100,11 +100,11 @@ return [
         'show_title' => 'Show Kiosk',
         'inputs' => [
             'business_type_id' => 'Business Type',
-            'name' => 'Name',
-            'location' => 'Location',
+            'name' => 'Kiosk Name',
+            'location' => 'Kiosk Location',
             'suggested_action' => 'Suggested Action',
             'comment' => 'Comment',
-            'status' => 'Status',
+            'status' => 'Kiosk Status',
         ],
     ],
 
