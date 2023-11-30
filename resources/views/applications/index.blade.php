@@ -57,6 +57,10 @@
                                 </th>
 
                                 <th class="px-4 py-3 text-left">
+                                    Applied Date and Time
+                                </th>
+
+                                <th class="px-4 py-3 text-left">
                                     @lang('crud.applications.inputs.user_id')
                                 </th>
 
@@ -88,6 +92,10 @@
 
                                     <td class="px-4 py-3 text-left">
                                         {{ $application->id }}
+                                    </td>
+
+                                    <td class="px-4 py-3 text-left">
+                                        {{ \Carbon\Carbon::parse($application->created_at)->isoFormat('D MMMM YYYY HH:mm') }}
                                     </td>
 
                                     <td class="px-4 py-3 text-left">
