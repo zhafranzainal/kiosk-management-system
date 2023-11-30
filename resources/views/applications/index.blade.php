@@ -69,6 +69,10 @@
                                 </th>
 
                                 <th class="px-4 py-3 text-left">
+                                    @lang('crud.business_types.inputs.name')
+                                </th>
+
+                                <th class="px-4 py-3 text-left">
                                     @lang('crud.applications.inputs.start_date')
                                 </th>
 
@@ -104,6 +108,10 @@
 
                                     <td class="px-4 py-3 text-left">
                                         {{ optional($application->kiosk)->name ?? '-' }}
+                                    </td>
+
+                                    <td class="px-4 py-3 text-left">
+                                        {{ optional(optional($application->kiosk)->businessType)->name ?? '-' }}
                                     </td>
 
                                     <td class="px-4 py-3 text-left">

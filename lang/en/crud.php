@@ -60,7 +60,7 @@ return [
         'edit_title' => 'Edit BusinessType',
         'show_title' => 'Show BusinessType',
         'inputs' => [
-            'name' => 'Name',
+            'name' => 'Business Type',
         ],
     ],
 
