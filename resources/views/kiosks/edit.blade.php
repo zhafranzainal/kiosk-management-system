@@ -22,6 +22,12 @@
                     <div class="flex flex-wrap">
 
                         <x-inputs.group class="w-full">
+                            <h5 class="font-bold">
+                                General Info
+                            </h5>
+                        </x-inputs.group>
+
+                        <x-inputs.group class="w-full">
 
                             @php
                                 function getKioskNumberForEdit($kiosk)
@@ -68,7 +74,7 @@
                         </x-inputs.group>
 
                         <x-inputs.group class="w-full">
-                            <x-inputs.select name="status" label="Status">
+                            <x-inputs.select name="status" label="Kiosk Status">
 
                                 @php $selected = old('status', ($editing ? $kiosk->status : 'Inactive')) @endphp
 

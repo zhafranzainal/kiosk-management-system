@@ -39,13 +39,6 @@
 
                     <div class="mb-4">
                         <h5 class="font-medium text-gray-700">
-                            @lang('crud.kiosks.inputs.status')
-                        </h5>
-                        <span>{{ $kiosk->status ?? '-' }}</span>
-                    </div>
-
-                    <div class="mb-4">
-                        <h5 class="font-medium text-gray-700">
                             @lang('crud.kiosks.inputs.location')
                         </h5>
                         <span>{{ $kiosk->location ?? '-' }}</span>
@@ -56,6 +49,13 @@
                             @lang('crud.kiosks.inputs.business_type_id')
                         </h5>
                         <span>{{ optional($kiosk->businessType)->name ?? '-' }}</span>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5 class="font-medium text-gray-700">
+                            @lang('crud.kiosks.inputs.status')
+                        </h5>
+                        <span>{{ $kiosk->status ?? '-' }}</span>
                     </div>
 
                 </div>
