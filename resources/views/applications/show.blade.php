@@ -60,32 +60,34 @@
 
                     <div class="mb-4">
                         <h5 class="font-medium text-gray-700">
+                            Kiosk Number
+                        </h5>
+                        <span>FKK{{ str_pad(optional($application->kiosk)->id, 2, '0', STR_PAD_LEFT) }}</span>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5 class="font-medium text-gray-700">
                             @lang('crud.applications.inputs.kiosk_id')
                         </h5>
                         <span>{{ optional($application->kiosk)->name ?? '-' }}</span>
                     </div>
 
-
-
                     <div class="mb-4">
                         <h5 class="font-medium text-gray-700">
-                            @lang('crud.applications.inputs.start_date')
+                            Business Type
                         </h5>
-                        <span>{{ $application->start_date ?? '-' }}</span>
+                        <span>{{ optional(optional($application->kiosk)->businessType)->name ?? '-' }}</span>
                     </div>
 
                     <div class="mb-4">
                         <h5 class="font-medium text-gray-700">
-                            @lang('crud.applications.inputs.end_date')
+                            Business Period
                         </h5>
-                        <span>{{ $application->end_date ?? '-' }}</span>
-                    </div>
-
-                    <div class="mb-4">
-                        <h5 class="font-medium text-gray-700">
-                            @lang('crud.applications.inputs.status')
-                        </h5>
-                        <span>{{ $application->status ?? '-' }}</span>
+                        <span>
+                            {{ optional($application->start_date)->format('j F Y') ?? '-' }}
+                            -
+                            {{ optional($application->end_date)->format('j F Y') ?? '-' }}
+                        </span>
                     </div>
 
                 </div>
@@ -96,13 +98,6 @@
                         <i class="mr-1 icon ion-md-return-left"></i>
                         @lang('crud.common.back')
                     </a>
-
-                    @can('create', App\Models\Application::class)
-                        <a href="{{ route('applications.create') }}" class="button">
-                            <i class="mr-1 icon ion-md-add"></i>
-                            @lang('crud.common.create')
-                        </a>
-                    @endcan
 
                 </div>
 
