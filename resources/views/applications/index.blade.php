@@ -124,9 +124,36 @@
                                         {{ optional($application->end_date)->format('j F Y') ?? '-' }}
                                     </td>
 
+                                    <td class="px-4 py-3 text-left" style="display: flex; align-items: center;">
 
-                                    <td class="px-4 py-3 text-left">
+                                        @php
+
+                                            $status = strtolower($application->status ?? '-');
+                                            $circleColor = '';
+
+                                            switch ($status) {
+                                                case 'pending':
+                                                    $circleColor = 'orange';
+                                                    break;
+                                                case 'accepted':
+                                                    $circleColor = 'limegreen';
+                                                    break;
+                                                case 'rejected':
+                                                    $circleColor = 'red';
+                                                    break;
+                                                default:
+                                                    $circleColor = 'transparent';
+                                                    break;
+                                            }
+
+                                        @endphp
+
+                                        <span class="rounded-full h-1 w-1 mr-2"
+                                            style="background-color: {{ $circleColor }};">
+                                        </span>
+
                                         {{ $application->status ?? '-' }}
+
                                     </td>
 
                                     <td class="px-4 py-3 text-center" style="width: 134px;">
