@@ -10,9 +10,12 @@
 
                     <div class="row">
                         <h4 class="header-title" style="margin-left: 10px">Manage Kiosks</h4>
-                        <a href="" class="btn btn-danger btn-sm" style="position: absolute; right:2%;">
-                            + Add Kiosk
-                        </a>
+                        @can('create', App\Models\Kiosk::class)
+                            <a href="{{ route('kiosks.create') }}" class="btn btn-danger btn-sm"
+                                style="position: absolute; right:2%;">
+                                + Add Kiosk
+                            </a>
+                        @endcan
                     </div>
                     <br>
 
