@@ -173,15 +173,21 @@
                             <div
                                 class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
 
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <a href="{{ route('profile.show') }}" class="dropdown-item notify-item">
                                     <i class="mdi mdi-account-circle mr-1"></i>
-                                    <span>My Profile</span>
+                                    {{ __('My Profile') }}
                                 </a>
 
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <!-- Authentication -->
+                                <form method="POST" action="{{ route('logout') }}"
+                                    class="dropdown-item notify-item">
+                                    @csrf
                                     <i class="mdi mdi-logout mr-1"></i>
-                                    <span>Logout</span>
-                                </a>
+                                    <a href="{{ route('logout') }}"
+                                        onclick="event.preventDefault(); this.closest('form').submit();">
+                                        {{ __('Log Out') }}
+                                    </a>
+                                </form>
 
                             </div>
 
